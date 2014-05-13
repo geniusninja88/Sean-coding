@@ -1,11 +1,13 @@
 puts "Please input what you want to see prime numbers to: "
 #listing the primenumbers from 1 to the whatever the input is efficiently
+
 isPrime = 1
 top_number = gets.chomp
-#variable to count the number of times it divides
-counter = 0
-#variable to time how long the program runs
-beginning = Time.now
+
+counter = 0 #variable to count the number of times it divides
+
+beginning = Time.now #variable to time how long the program runs
+
 while (isPrime <= top_number.to_i)
 	x = false
 	w = (isPrime - 1)
