@@ -91,7 +91,7 @@ end
 puts "Original set of numbers in unsorted_random.txt has " + unsorted_random.length.to_s + " numbers."
 puts unsorted_random.join(", ")
 
-compare_count, swap_count = bubble_sort(unsorted_random)
+compare_count, swap_count = sean_sort(unsorted_random)
 
 puts "\nSorted set of numbers"
 puts unsorted_random.join(", ")
@@ -101,7 +101,7 @@ puts "----------------------------------------------------"
 puts "Original set of numbers in unsorted_worst.txt has " + unsorted_worst.length.to_s + " numbers."
 puts unsorted_worst.join(", ")
 
-compare_count, swap_count = bubble_sort(unsorted_worst)
+compare_count, swap_count = sean_sort(unsorted_worst)
 
 puts "\nSorted set of numbers"
 puts unsorted_worst.join(", ")
@@ -111,7 +111,7 @@ puts "-----------------------------------------------------"
 puts "Original set of numbers in unsorted_almost.txt has " + unsorted_almost.length.to_s + " numbers."
 puts unsorted_almost.join(", ")
 
-compare_count, swap_count = bubble_sort(unsorted_almost)
+compare_count, swap_count = sean_sort(unsorted_almost)
 
 puts "\nSorted set of numbers"
 puts unsorted_almost.join(", ")
