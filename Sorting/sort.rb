@@ -7,17 +7,17 @@ unsorted_random = []
 unsorted_worst = []
 unsorted_almost = []
 
-file_handle = File.open(File.dirname(__FILE__) + "/unsorted_random.txt", "r") or die "Unable to open file"
+file_handle = File.open(File.dirname(__FILE__) + "/unsorted_files/unsorted_random.txt", "r") or die "Unable to open file"
 file_handle.each_line do |line|
 	unsorted_random.push(line.to_i)
 end
 
-file_handle = File.open(File.dirname(__FILE__) + "/unsorted_worst.txt", "r") or die "Unable to open file"
+file_handle = File.open(File.dirname(__FILE__) + "/unsorted_files/unsorted_worst.txt", "r") or die "Unable to open file"
 file_handle.each_line do |line|
 	unsorted_worst.push(line.to_i)
 end
 
-file_handle = File.open(File.dirname(__FILE__) + "/unsorted_almost.txt", "r") or die "Unable to open file"
+file_handle = File.open(File.dirname(__FILE__) + "/unsorted_files/unsorted_almost.txt", "r") or die "Unable to open file"
 file_handle.each_line do |line|
 	unsorted_almost.push(line.to_i)
 end
@@ -33,21 +33,23 @@ def bubble_sort(numbers)
 	for i in 0..(numbers.length - 2)
 		found_swap = false
 		for j in 0..(numbers.length-2-i)
-			
+
 			compare_count += 1
 
-			
-			
 			# Swap numbers if the second number is greater than the first
-				if numbers[j] > numbers[j+1] && found_swap == false
+				if numbers[j] > numbers[j+1] and found_swap == false
 					temp = numbers[j+1]
 					numbers[j+1] = numbers[j]
 					numbers[j] = temp
 					swap_count += 1
+				#If the second number is greater than the first, it has found a swap
 					found_swap = true
+				#If the second number is not greater tnan the first, it has not found a swap
+				else numbers[j+1] > numbers[j]
+					found_swap = false
 				end
-				
-			
+
+
 		end	
 	end
 
@@ -57,7 +59,31 @@ end
 
 # Sean........ fill this in with your algorithm.
 def sean_sort(numbers)
-	
+
+	minimum_value = numbers[0]
+	counter = 1
+
+	while counter < numbers_length #does this loop however long the unsorted array of numbers are
+
+		for i in 1..numbers.length #finds minimum value
+
+		#if a number is the minimum, number[that number] = minimum
+			if numbers[i] < minimum_value
+				minimum_value = numbers[i]
+				t = i #saves place in array that the minimum value was in
+			end
+
+		end
+
+
+		#switches the minimum value with the first non-minimum value
+		hold_value = numbers[j-1] 
+		numbers[j-1] = minimum_value
+		numbers[t] = hold_value
+
+		counter += 1
+	end
+
 
 end
 
